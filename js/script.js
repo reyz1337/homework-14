@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     alert(`Result: ${result_2}`);
 
 //3 Користувач вказує обсяг флешки в Гб. Програма повинна порахувати скільки файлів розміром в 820 Мб поміщається на флешку.
-    const onegb = 1000;
+    const onegb = 1024;
     const mb = 820;
     let gb = +prompt(`Введіть кількість гігабайт: `);
     let result_3 = gb*onegb/mb;
@@ -24,13 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let money = +prompt('Введіть кількість грошей: ');
     let chocolate = +prompt('Введіть ціну шоколадки: ');
     let result_4 = Math.floor(money/chocolate);
-    let change = Math.round(money/(chocolate*result_4));
+    let change = (money - (chocolate*result_4));
     alert(`Ви можете придбати ${result_4} шоколадок, Ваша решта ${change}`);
 
 //2 Запитай у користувача тризначне число і виведи його задом наперед. Для вирішення завдання тобі знадобиться оператор % (залишок від ділення).
-    let number = prompt('Введіть тризначне число: ');
-    let reverse_number = number[2] + number[1] + number[0];
-    alert(`${reverse_number}`);
+    let number = +prompt('Введіть тризначне число: ');
+    let firstNumber = number % 10;
+    let thirdNumber = (number/100).toFixed(0);
+    let secondNumber = (number - thirdNumber * 100 - firstNumber) / 10;
+    let reverseNumber = firstNumber.toString() + secondNumber.toString() + thirdNumber.toString();
+    alert(`${number} reverse: ${reverseNumber}`);
     //доробити
 
 //maximum
