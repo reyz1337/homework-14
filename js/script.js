@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let chocolate = +prompt('Введіть ціну шоколадки: ');
     let result_4 = Math.floor(money/chocolate);
     let change = (money - (chocolate*result_4));
-    alert(`Ви можете придбати ${result_4} шоколадок, Ваша решта ${change}`);
+    alert(`Ви можете придбати ${result_4} шоколадок, Ваша решта ${change.toFixed(1)}`);
 
 //2 Запитай у користувача тризначне число і виведи його задом наперед. Для вирішення завдання тобі знадобиться оператор % (залишок від ділення).
     let number = +prompt('Введіть тризначне число: ');
